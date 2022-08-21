@@ -27,6 +27,8 @@ namespace Fibonacci.FibonacciMenus
             {
                 case 1: MenuOpcoes.Opcoes();; break;
                 case 0: Environment.Exit(0); break;
+               
+
 
             }
         }

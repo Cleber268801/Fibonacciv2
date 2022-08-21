@@ -6,59 +6,40 @@ using System.Threading.Tasks;
 
 namespace Fibonacci.FibonacciCalcular
 {
-    public class EFibonacci 
-    {
-        public static List<int> ENumFibonacci(int numero)
-        {
-            List<int> fibonacci = new List<int>();
+     public class EFibonacci 
+     {
+         public static  List<int>  VerificarFibonacci(int numero)
+         {
+
+
+             List<int> fibonacci = new List<int>();         
+
+                 int soma = 0;
+                 int fib = 1;
+
+                 fibonacci.Add(soma);
+
+             while (soma < numero)
+             {
+                 soma += fib;
+                 fib = soma-fib;
+                 if (soma <= numero)
+                 {
+                     fibonacci.Add(soma);
+
+                 }
+
+             }
+             bool numeroExiste;
+             numeroExiste = fibonacci.Contains(numero);         
+
+             var listfibona =new List<Fibonacci1>();            
+             listfibona.Add(new Fibonacci1(fibonacci,numero,numeroExiste));
             Console.Clear();
-            int soma = 0;
-            int fib = 1;
-            if (soma == numero)
-            {
-                FibonnacciExibir.ExibirEfibonacci.ExibirFibonacci(fibonacci, numero);
-            }
+            FibonnacciExibir.ExibirEfibonacci.ExibirFibonacci(listfibona, numero);
 
-            fibonacci.Add(soma);
-            fibonacci.Add(fib);
-            while (soma < numero)
-            {
+         return fibonacci;
 
-                soma += fib;
-                fib += soma;
-                if (soma <= numero)
-                {
-                    fibonacci.Add(soma);
-
-                }
-
-                if (fib <= numero)
-                {
-                    fibonacci.Add(fib);
-                }
-
-            }
-
-            int enf = 0;
-            foreach (var item in fibonacci)
-            {
-                if(item == numero)
-                {
-                    enf += 1;
-                }
-            }
-            if (enf == 1)
-            {
-                FibonnacciExibir.ExibirEfibonacci.ExibirFibonacci(fibonacci, numero);
-            }
-            else {
-                FibonnacciExibir.ExibirNaoEfibonacci.ExibirNaoFibonacci(fibonacci, numero);
-            }
-
-            return fibonacci;
-
-
-
-        }
-    }
+         }
+     }
 }

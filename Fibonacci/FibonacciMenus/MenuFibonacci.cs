@@ -8,22 +8,11 @@ namespace Fibonacci.FibonacciMenus
 {
     public class MenuFibonacci
     {
-        public int SeqNum { get; set; }
-        public int EFibNum { get; set; }
 
-
-        public MenuFibonacci(int seqNum, int eFibNum)
-        {
-            SeqNum = seqNum;
-            EFibNum = eFibNum;
-        }
-
-        public MenuFibonacci()
-        {
-        }
 
         public static void  SeqFibonacci()
-        {
+
+       {
             Console.Clear();
             Console.WriteLine(new String('-', 50));
             Console.WriteLine($"              SEQUENCIA FIBONACCI  ");
@@ -36,7 +25,7 @@ namespace Fibonacci.FibonacciMenus
             try
             {
 
-                int numeroFibonacci = int.Parse(Console.ReadLine());///1000
+                int numeroFibonacci = int.Parse(Console.ReadLine());
                 FibonacciCalcular.FibonacciCalcular.SomarFibonacci(numeroFibonacci);
             }
             catch (Exception ex)
@@ -44,9 +33,13 @@ namespace Fibonacci.FibonacciMenus
                 FabonacciMsgError.FibonacciMsgError.MsgError(ex.Message);
                 
             }
+       
+
+
+
         }
 
-       
+      
 
         public static void EFibonnaci()
         {
@@ -63,8 +56,9 @@ namespace Fibonacci.FibonacciMenus
             try
             {
 
-                int numeroFibonacci = int.Parse(Console.ReadLine());///1000
-                FibonacciCalcular.EFibonacci.ENumFibonacci(numeroFibonacci);
+                int numeroFibonacci = int.Parse(Console.ReadLine());
+                FibonacciCalcular.EFibonacci.VerificarFibonacci(numeroFibonacci);
+
             }
             catch (Exception ex)
             {
