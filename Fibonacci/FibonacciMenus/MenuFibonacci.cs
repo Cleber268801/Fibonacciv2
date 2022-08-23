@@ -10,9 +10,9 @@ namespace Fibonacci.FibonacciMenus
     {
 
 
-        public static void  SeqFibonacci()
+        public static void SeqFibonacci()
 
-       {
+        {
             Console.Clear();
             Console.WriteLine(new String('-', 50));
             Console.WriteLine($"              SEQUENCIA FIBONACCI  ");
@@ -26,20 +26,22 @@ namespace Fibonacci.FibonacciMenus
             {
 
                 int numeroFibonacci = int.Parse(Console.ReadLine());
-                FibonacciCalcular.FibonacciCalcular.SomarFibonacci(numeroFibonacci);
+
+                Fibonacci1 fibonacci = FibonacciCalcular.FibonacciCalcular.Fibonacci(numeroFibonacci);
+                FibonacciRelatorio.GravarSeqFib.GravarFibonacci(numeroFibonacci);
+                FibonnacciExibir.FibonacciExibir.ExibirFibonacci(numeroFibonacci);
+                
+
             }
             catch (Exception ex)
             {
                 FabonacciMsgError.FibonacciMsgError.MsgError(ex.Message);
-                
+
             }
-       
-
-
 
         }
 
-      
+
 
         public static void EFibonnaci()
         {
@@ -57,15 +59,26 @@ namespace Fibonacci.FibonacciMenus
             {
 
                 int numeroFibonacci = int.Parse(Console.ReadLine());
-                FibonacciCalcular.EFibonacci.VerificarFibonacci(numeroFibonacci);
 
+                Fibonacci1 fibonacci = FibonacciCalcular.FibonacciCalcular.Fibonacci(numeroFibonacci);
+
+                if (fibonacci.Efibonacci == true)
+                {
+                    FibonnacciExibir.ExibirEfibonacci.ExibirFibonacci(numeroFibonacci);
+                }
+                else
+                {
+                    FibonnacciExibir.ExibirEfibonacci.ExibirNaoFibonacci(numeroFibonacci);
+                }
+               
             }
             catch (Exception ex)
             {
                 FabonacciMsgError.FibonacciMsgError.MsgError(ex.Message);
 
             }
-        }
 
+
+        }
     }
 }

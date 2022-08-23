@@ -32,6 +32,8 @@ namespace Fibonacci.FibonacciMenus
                 case 1: MenuFibonacci.SeqFibonacci(); break;
                 case 2: MenuFibonacci.EFibonnaci(); break;
                 case 0: Environment.Exit(0); break;
+                default: Opcoes(); break;
+
 
             }
         }

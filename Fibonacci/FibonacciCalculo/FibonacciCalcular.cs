@@ -10,10 +10,8 @@ namespace Fibonacci.FibonacciCalcular
     public class FibonacciCalcular
     {
               
-        public static  List<int>  SomarFibonacci(int numero)
+        public static Fibonacci1 Fibonacci(int numero)
         {
-           
-
             List<int> fibonacci = new List<int>();         
                 
                 int soma = 0;
@@ -32,16 +30,16 @@ namespace Fibonacci.FibonacciCalcular
                 }
                
             }
-            bool numeroExiste;
-            numeroExiste = fibonacci.Contains(numero);         
 
-            var listfibona =new List<Fibonacci1>();            
-            listfibona.Add(new Fibonacci1(fibonacci,numero,numeroExiste));
+            bool numeroExiste = fibonacci.Contains(numero);
 
+            Fibonacci1 fibonacciObj = new Fibonacci1();
 
-            FibonnacciExibir.FibonacciExibir.ExibirFibonacci(fibonacci, numero);            
-            FibonacciRelatorio.GravarSeqFib.GravarFibonacci(fibonacci, numero);
-            return fibonacci;
+            fibonacciObj.ListaFibonacci = fibonacci;
+            fibonacciObj.Efibonacci = numeroExiste;
+            fibonacciObj.Numero = numero;
+
+            return fibonacciObj;
     
         }
 

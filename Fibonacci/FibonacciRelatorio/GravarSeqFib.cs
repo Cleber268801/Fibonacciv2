@@ -8,7 +8,7 @@ namespace Fibonacci.FibonacciRelatorio
 {
     public class GravarSeqFib
     {
-        public static void GravarFibonacci(List<int> listanumero, int numero)
+        public static void GravarFibonacci(int numeroDigitatdo)
         {
 
             string folderPath = @"C:\Test";
@@ -34,14 +34,14 @@ namespace Fibonacci.FibonacciRelatorio
                 sw.WriteLine(new String('-', 60));
 
             }
-
-            int contar = listanumero.Count;
+            Fibonacci1 fibonacciLista = FibonacciCalcular.FibonacciCalcular.Fibonacci(numeroDigitatdo);
+            int contar = fibonacciLista.ListaFibonacci.Count;
             sw.WriteLine(new String('-', 60));
             sw.WriteLine($"           SEQUENCIA FIBONACCI  ");
             sw.WriteLine("");
-            sw.WriteLine($"       Entre O a {numero} temos {contar} numeros ");
+            sw.WriteLine($"       Entre O a {numeroDigitatdo} temos {contar} numeros ");
             sw.WriteLine(new String('-', 60));
-            foreach (var item in listanumero)
+            foreach (var item in fibonacciLista.ListaFibonacci)
             {
 
                 sw.WriteLine($"{item}");
